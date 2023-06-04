@@ -1,7 +1,10 @@
 package com.mraof.minestuck.data;
 
 import com.mraof.minestuck.Minestuck;
-import com.mraof.minestuck.alchemy.*;
+import com.mraof.minestuck.alchemy.GristAmount;
+import com.mraof.minestuck.alchemy.GristSet;
+import com.mraof.minestuck.alchemy.GristType;
+import com.mraof.minestuck.alchemy.GristTypes;
 import com.mraof.minestuck.block.MSBlocks;
 import com.mraof.minestuck.block.redstone.AreaEffectBlock;
 import com.mraof.minestuck.block.redstone.SummonerBlock;
@@ -30,6 +33,7 @@ import com.mraof.minestuck.item.MSItems;
 import com.mraof.minestuck.item.loot.MSLootEvents;
 import com.mraof.minestuck.item.weapon.MusicPlayerWeapon;
 import com.mraof.minestuck.item.weapon.OnHitEffect;
+import com.mraof.minestuck.jei.JeiDuality;
 import com.mraof.minestuck.jei.JeiGristCost;
 import com.mraof.minestuck.network.EffectTogglePacket;
 import com.mraof.minestuck.player.*;
@@ -1926,6 +1930,7 @@ public class MinestuckEnUsLanguageProvider extends MinestuckLanguageProvider
 		add(PredefineData.CHANGED_TITLE_LAND, "Changed predefined title land type from %s to %s due to a new terrain land type");
 		
 		add(JeiGristCost.GRIST_COSTS, "Grist Costs");
+		add(JeiDuality.TITLE, "Weapon/Object Duality");
 		
 		add(MSKeyHandler.CATEGORY, "Minestuck");
 		add(MSKeyHandler.STATS_GUI, "View General Minestuck Gui");

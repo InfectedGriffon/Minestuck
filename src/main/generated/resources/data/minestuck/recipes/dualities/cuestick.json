@@ -1,0 +1,9 @@
+{
+  "type": "minestuck:duality",
+  "object": {
+    "item": "minestuck:ace_of_diamonds"
+  },
+  "weapon": {
+    "item": "minestuck:cuestick"
+  }
+}

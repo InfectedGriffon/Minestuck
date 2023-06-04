@@ -1,13 +1,14 @@
 package com.mraof.minestuck.jei;
 
 import com.mraof.minestuck.Minestuck;
-import com.mraof.minestuck.block.MSBlocks;
-import com.mraof.minestuck.item.MSItems;
-import com.mraof.minestuck.item.crafting.MSRecipeTypes;
+import com.mraof.minestuck.alchemy.GristAmount;
 import com.mraof.minestuck.alchemy.recipe.CombinationMode;
 import com.mraof.minestuck.alchemy.recipe.CombinationRecipe;
-import com.mraof.minestuck.alchemy.GristAmount;
 import com.mraof.minestuck.alchemy.recipe.GristCostRecipe;
+import com.mraof.minestuck.block.MSBlocks;
+import com.mraof.minestuck.item.MSItems;
+import com.mraof.minestuck.item.crafting.DualityRecipe;
+import com.mraof.minestuck.item.crafting.MSRecipeTypes;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
 import mezz.jei.api.ingredients.IIngredientType;
@@ -30,6 +31,7 @@ public class MinestuckJeiPlugin implements IModPlugin
 	public static final RecipeType<JeiGristCost> GRIST_COST = RecipeType.create(Minestuck.MOD_ID, "grist_cost", JeiGristCost.class);
 	public static final RecipeType<JeiCombination> LATHE = RecipeType.create(Minestuck.MOD_ID, "totem_lathe", JeiCombination.class);
 	public static final RecipeType<JeiCombination> DESIGNIX = RecipeType.create(Minestuck.MOD_ID, "punch_designix", JeiCombination.class);
+	public static final RecipeType<JeiDuality> DUALITY = RecipeType.create(Minestuck.MOD_ID, "duality", JeiDuality.class);
 	
 	public static final IIngredientType<GristAmount> GRIST = () -> GristAmount.class;
 	
@@ -55,12 +57,12 @@ public class MinestuckJeiPlugin implements IModPlugin
 	@Override
 	public void registerCategories(IRecipeCategoryRegistration registry)
 	{
-		GristCostRecipeCategory alchemiterCategory = new GristCostRecipeCategory(registry.getJeiHelpers().getGuiHelper());
-		registry.addRecipeCategories(alchemiterCategory);
-		TotemLatheRecipeCategory totemLatheCategory = new TotemLatheRecipeCategory(registry.getJeiHelpers().getGuiHelper());
-		registry.addRecipeCategories(totemLatheCategory);
-		DesignixRecipeCategory designixCategory = new DesignixRecipeCategory(registry.getJeiHelpers().getGuiHelper());
-		registry.addRecipeCategories(designixCategory);
+		registry.addRecipeCategories(
+				new GristCostRecipeCategory(registry.getJeiHelpers().getGuiHelper()),
+				new TotemLatheRecipeCategory(registry.getJeiHelpers().getGuiHelper()),
+				new DesignixRecipeCategory(registry.getJeiHelpers().getGuiHelper()),
+				new DualityRecipeCategory(registry.getJeiHelpers().getGuiHelper())
+		);
 	}
 	
 	@Override
@@ -89,5 +91,7 @@ public class MinestuckJeiPlugin implements IModPlugin
 		registration.addRecipes(DESIGNIX, recipes.stream().filter(recipe -> recipe.getType() == MSRecipeTypes.COMBINATION_TYPE.get())
 				.flatMap(recipe -> ((CombinationRecipe) recipe).getJeiCombinations().stream())
 				.filter(combination -> combination.getMode() == CombinationMode.OR).toList());
+		registration.addRecipes(DUALITY, recipes.stream().filter(recipe -> recipe.getType() == MSRecipeTypes.DUALITY_TYPE.get())
+				.flatMap(recipe -> ((DualityRecipe)recipe).getJeiForm().stream()).toList());
 	}
 }

@@ -21,6 +21,7 @@ public class MSRecipeTypes
 	public static final RegistryObject<RecipeType<IrradiatingRecipe>> IRRADIATING_TYPE = recipeType("irradiating");
 	public static final RegistryObject<RecipeType<GristCostRecipe>> GRIST_COST_TYPE = recipeType("grist_cost");
 	public static final RegistryObject<RecipeType<AbstractCombinationRecipe>> COMBINATION_TYPE = recipeType("combination");
+	public static final RegistryObject<RecipeType<DualityRecipe>> DUALITY_TYPE = recipeType("duality");
 	
 	private static <T extends Recipe<?>> RegistryObject<RecipeType<T>> recipeType(String name)
 	{
@@ -49,4 +50,6 @@ public class MSRecipeTypes
 	public static final RegistryObject<RecipeSerializer<SourceGristCost>> SOURCE_GRIST_COST = SERIALIZER_REGISTER.register("source_grist_cost", SourceGristCost.Serializer::new);
 	
 	public static final RegistryObject<RecipeSerializer<CombinationRecipe>> COMBINATION = SERIALIZER_REGISTER.register("combination", CombinationRecipe.Serializer::new);
+	
+	public static final RegistryObject<RecipeSerializer<DualityRecipe>> DUALITY = SERIALIZER_REGISTER.register("duality", DualityRecipe.Serializer::new);
 }

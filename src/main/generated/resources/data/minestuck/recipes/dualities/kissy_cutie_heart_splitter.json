@@ -1,0 +1,9 @@
+{
+  "type": "minestuck:duality",
+  "object": {
+    "item": "minestuck:kissy_cutie_heart_hitter"
+  },
+  "weapon": {
+    "item": "minestuck:kissy_cutie_heart_splitter"
+  }
+}

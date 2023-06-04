@@ -1,0 +1,9 @@
+{
+  "type": "minestuck:duality",
+  "object": {
+    "item": "minestuck:ace_of_spades"
+  },
+  "weapon": {
+    "item": "minestuck:horse_hitcher"
+  }
+}

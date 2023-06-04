@@ -1,0 +1,9 @@
+{
+  "type": "minestuck:duality",
+  "object": {
+    "item": "minestuck:edisons_serenity"
+  },
+  "weapon": {
+    "item": "minestuck:edisons_fury"
+  }
+}

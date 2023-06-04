@@ -6,6 +6,7 @@ import com.mraof.minestuck.Minestuck;
 import com.mraof.minestuck.data.loot_table.MSLootModifiers;
 import com.mraof.minestuck.data.loot_table.MinestuckLootTableProvider;
 import com.mraof.minestuck.data.recipe.MinestuckCombinationsProvider;
+import com.mraof.minestuck.data.recipe.MinestuckDualityProvider;
 import com.mraof.minestuck.data.recipe.MinestuckGristCostsProvider;
 import com.mraof.minestuck.data.recipe.MinestuckRecipeProvider;
 import com.mraof.minestuck.data.tag.*;
@@ -45,6 +46,7 @@ public class MinestuckData
 		gen.addProvider(event.includeServer(), new MinestuckRecipeProvider(gen));
 		gen.addProvider(event.includeServer(), new MinestuckGristCostsProvider(gen));
 		gen.addProvider(event.includeServer(), new MinestuckCombinationsProvider(gen));
+		gen.addProvider(event.includeServer(), new MinestuckDualityProvider(gen));
 		gen.addProvider(event.includeServer(), new GeneratedGristCostConfigProvider(gen, Minestuck.MOD_ID));
 		
 		gen.addProvider(event.includeServer(), new BoondollarPricingProvider(gen, Minestuck.MOD_ID));

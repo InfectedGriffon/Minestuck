@@ -1,0 +1,9 @@
+{
+  "type": "minestuck:duality",
+  "object": {
+    "item": "minestuck:crocker_spoon"
+  },
+  "weapon": {
+    "item": "minestuck:crocker_fork"
+  }
+}

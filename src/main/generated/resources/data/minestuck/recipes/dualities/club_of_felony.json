@@ -1,0 +1,9 @@
+{
+  "type": "minestuck:duality",
+  "object": {
+    "item": "minestuck:ace_of_clubs"
+  },
+  "weapon": {
+    "item": "minestuck:club_of_felony"
+  }
+}
