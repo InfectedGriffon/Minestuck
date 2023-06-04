@@ -26,6 +26,8 @@ public class MinestuckDualityProvider extends RecipeProvider
 		
 		DualityRecipeBuilder.of(MSItems.CROCKER_SPOON.get(), MSItems.CROCKER_FORK.get()).build(consumer);
 		DualityRecipeBuilder.of(MSItems.EDISONS_SERENITY.get(), MSItems.EDISONS_FURY.get()).build(consumer);
+		
+		DualityRecipeBuilder.of(MSItems.LIPSTICK.get(), MSItems.LIPSTICK_CHAINSAW.get()).build(consumer);
 	}
 	
 	@Override

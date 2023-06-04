@@ -17,11 +17,6 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Collections;
 import java.util.List;
 
-// TODO
-// - find some way to make each item both input and output
-// - some sort of distinction between sheathing
-//
-
 public class DualityRecipe implements Recipe<SimpleContainer>
 {
 	private final ResourceLocation id;
@@ -42,7 +37,7 @@ public class DualityRecipe implements Recipe<SimpleContainer>
 	}
 	
 	@Override
-	public ItemStack assemble(SimpleContainer pContainer)
+	public ItemStack assemble(SimpleContainer container)
 	{
 		return weapon;
 	}

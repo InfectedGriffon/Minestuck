@@ -1,0 +1,9 @@
+{
+  "type": "minestuck:duality",
+  "object": {
+    "item": "minestuck:lipstick"
+  },
+  "weapon": {
+    "item": "minestuck:lipstick_chainsaw"
+  }
+}

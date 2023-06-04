@@ -1,5 +1,6 @@
 package com.mraof.minestuck.jei;
 
+import com.mraof.minestuck.Minestuck;
 import com.mraof.minestuck.item.MSItems;
 import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
@@ -15,11 +16,12 @@ import net.minecraft.world.item.ItemStack;
 
 public class DualityRecipeCategory implements IRecipeCategory<JeiDuality>
 {
+	public static final String TITLE = "minestuck.jei.duality";
 	private final IDrawable background, icon;
 	
 	DualityRecipeCategory(IGuiHelper guiHelper)
 	{
-		background = guiHelper.createDrawable(new ResourceLocation("minestuck:textures/gui/duality.png"), 0, 0, 66, 18);
+		background = guiHelper.createDrawable(new ResourceLocation(Minestuck.MOD_ID, "textures/gui/duality.png"), 0, 0, 66, 18);
 		icon = guiHelper.createDrawableIngredient(VanillaTypes.ITEM_STACK, new ItemStack(MSItems.CROCKER_FORK.get()));
 	}
 	
@@ -32,7 +34,7 @@ public class DualityRecipeCategory implements IRecipeCategory<JeiDuality>
 	@Override
 	public Component getTitle()
 	{
-		return Component.translatable(JeiDuality.TITLE);
+		return Component.translatable(TITLE);
 	}
 	
 	@Override
