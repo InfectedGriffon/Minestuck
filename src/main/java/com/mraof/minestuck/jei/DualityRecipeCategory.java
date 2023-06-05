@@ -2,6 +2,7 @@ package com.mraof.minestuck.jei;
 
 import com.mraof.minestuck.Minestuck;
 import com.mraof.minestuck.item.MSItems;
+import com.mraof.minestuck.item.crafting.DualityRecipe;
 import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
 import mezz.jei.api.gui.drawable.IDrawable;
@@ -14,7 +15,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 
-public class DualityRecipeCategory implements IRecipeCategory<JeiDuality>
+public class DualityRecipeCategory implements IRecipeCategory<DualityRecipe>
 {
 	public static final String TITLE = "minestuck.jei.duality";
 	private final IDrawable background, icon;
@@ -26,7 +27,7 @@ public class DualityRecipeCategory implements IRecipeCategory<JeiDuality>
 	}
 	
 	@Override
-	public RecipeType<JeiDuality> getRecipeType()
+	public RecipeType<DualityRecipe> getRecipeType()
 	{
 		return MinestuckJeiPlugin.DUALITY;
 	}
@@ -50,11 +51,12 @@ public class DualityRecipeCategory implements IRecipeCategory<JeiDuality>
 	}
 	
 	@Override
-	public void setRecipe(IRecipeLayoutBuilder builder, JeiDuality recipe, IFocusGroup focuses)
+	public void setRecipe(IRecipeLayoutBuilder builder, DualityRecipe recipe, IFocusGroup focuses)
 	{
-		builder.addSlot(RecipeIngredientRole.INPUT, 1, 1).addItemStack(recipe.getObject());
-		builder.addInvisibleIngredients(RecipeIngredientRole.OUTPUT).addItemStack(recipe.getObject());
-		builder.addSlot(RecipeIngredientRole.OUTPUT, 49, 1).addItemStack(recipe.getWeapon());
-		builder.addInvisibleIngredients(RecipeIngredientRole.INPUT).addItemStack(recipe.getWeapon());
+		builder.addSlot(RecipeIngredientRole.INPUT, 1, 1).addItemStack(recipe.getOriginalItem());
+		builder.addSlot(RecipeIngredientRole.OUTPUT, 49, 1).addItemStack(recipe.getResultItem());
+		
+		builder.addInvisibleIngredients(RecipeIngredientRole.OUTPUT).addItemStack(recipe.getOriginalItem());
+		builder.addInvisibleIngredients(RecipeIngredientRole.INPUT).addItemStack(recipe.getResultItem());
 	}
 }
