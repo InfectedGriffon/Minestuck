@@ -2,7 +2,6 @@ package com.mraof.minestuck.item.crafting;
 
 import com.google.gson.JsonObject;
 import com.mraof.minestuck.Minestuck;
-import com.mraof.minestuck.jei.JeiDuality;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.SimpleContainer;
@@ -13,9 +12,6 @@ import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.item.crafting.ShapedRecipe;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
-
-import java.util.Collections;
-import java.util.List;
 
 public class DualityRecipe implements Recipe<SimpleContainer>
 {
@@ -48,10 +44,12 @@ public class DualityRecipe implements Recipe<SimpleContainer>
 		return true;
 	}
 	
+	public ItemStack getOriginalItem() {return object;}
+	
 	@Override
 	public ItemStack getResultItem()
 	{
-		return weapon.copy();
+		return weapon;
 	}
 	
 	@Override
@@ -70,10 +68,6 @@ public class DualityRecipe implements Recipe<SimpleContainer>
 	public RecipeType<?> getType()
 	{
 		return MSRecipeTypes.DUALITY_TYPE.get();
-	}
-	
-	public List<JeiDuality> getJeiForm() {
-		return Collections.singletonList(new JeiDuality(object, weapon));
 	}
 	
 	public static class Serializer implements RecipeSerializer<DualityRecipe> {
@@ -102,5 +96,4 @@ public class DualityRecipe implements Recipe<SimpleContainer>
 			buf.writeItemStack(recipe.weapon, false);
 		}
 	}
-	
 }

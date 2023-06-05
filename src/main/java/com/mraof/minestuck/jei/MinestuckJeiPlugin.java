@@ -21,6 +21,7 @@ import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.level.Level;
 
 import java.util.Collection;
+import java.util.stream.Stream;
 
 /**
  * Created by mraof on 2017 January 23 at 2:11 AM.
@@ -31,7 +32,7 @@ public class MinestuckJeiPlugin implements IModPlugin
 	public static final RecipeType<JeiGristCost> GRIST_COST = RecipeType.create(Minestuck.MOD_ID, "grist_cost", JeiGristCost.class);
 	public static final RecipeType<JeiCombination> LATHE = RecipeType.create(Minestuck.MOD_ID, "totem_lathe", JeiCombination.class);
 	public static final RecipeType<JeiCombination> DESIGNIX = RecipeType.create(Minestuck.MOD_ID, "punch_designix", JeiCombination.class);
-	public static final RecipeType<JeiDuality> DUALITY = RecipeType.create(Minestuck.MOD_ID, "duality", JeiDuality.class);
+	public static final RecipeType<DualityRecipe> DUALITY = RecipeType.create(Minestuck.MOD_ID, "duality", DualityRecipe.class);
 	
 	public static final IIngredientType<GristAmount> GRIST = () -> GristAmount.class;
 	
@@ -91,7 +92,7 @@ public class MinestuckJeiPlugin implements IModPlugin
 		registration.addRecipes(DESIGNIX, recipes.stream().filter(recipe -> recipe.getType() == MSRecipeTypes.COMBINATION_TYPE.get())
 				.flatMap(recipe -> ((CombinationRecipe) recipe).getJeiCombinations().stream())
 				.filter(combination -> combination.getMode() == CombinationMode.OR).toList());
-		registration.addRecipes(DUALITY, recipes.stream().filter(recipe -> recipe.getType() == MSRecipeTypes.DUALITY_TYPE.get())
-				.flatMap(recipe -> ((DualityRecipe)recipe).getJeiForm().stream()).toList());
+		registration.addRecipes(DUALITY, recipes.stream().filter(recipe -> recipe.getType() == MSRecipeTypes.COMBINATION_TYPE.get())
+				.flatMap(recipe -> Stream.of((DualityRecipe)recipe)).toList());
 	}
 }
