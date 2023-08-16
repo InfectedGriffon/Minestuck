@@ -4,10 +4,10 @@ import com.mraof.minestuck.Minestuck;
 import com.mraof.minestuck.alchemy.AlchemyHelper;
 import com.mraof.minestuck.blockentity.MSBlockEntityTypes;
 import com.mraof.minestuck.client.gui.MSScreenFactories;
+import com.mraof.minestuck.client.model.MSModelLayers;
 import com.mraof.minestuck.client.model.armor.*;
 import com.mraof.minestuck.client.model.entity.BishopModel;
 import com.mraof.minestuck.client.model.entity.RookModel;
-import com.mraof.minestuck.client.model.MSModelLayers;
 import com.mraof.minestuck.client.particles.PlasmaParticle;
 import com.mraof.minestuck.client.particles.TransportalizerParticle;
 import com.mraof.minestuck.client.renderer.blockentity.*;
@@ -102,6 +102,7 @@ public class ClientProxy
 		ComputerProgram.registerProgramClass(1, SburbServer.class);
 		ComputerProgram.registerProgramClass(2, DiskBurner.class);
 		ComputerProgram.registerProgramClass(3, SettingsApp.class);
+		ComputerProgram.registerProgramClass(4, HtmlEditorProgram.class);
 		
 		registerArmorModels();
 

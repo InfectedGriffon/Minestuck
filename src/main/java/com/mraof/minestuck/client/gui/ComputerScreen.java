@@ -169,11 +169,11 @@ public class ComputerScreen extends Screen
 	private class ComputerIcon extends ExtendedButton
 	{
 		private final ComputerProgram program;
-		private static final int WIDTH = 16, HEIGHT = 16;
+		private static final int SIZE = 16;
 		
 		public ComputerIcon(int xPos, int yPos, int id)
 		{
-			super(xPos, yPos, WIDTH, HEIGHT, Component.empty(), button -> setProgram(id));
+			super(xPos, yPos, SIZE, SIZE, Component.empty(), button -> setProgram(id));
 			
 			this.program = ComputerProgram.getProgram(id);
 		}
@@ -184,7 +184,7 @@ public class ComputerScreen extends Screen
 			if(!visible) return;
 			RenderSystem.setShaderColor(1, 1, 1, 1);
 			
-			guiGraphics.blit(this.program.getIcon(), getX(), getY(), WIDTH, HEIGHT, 0, 0, WIDTH, HEIGHT, WIDTH, HEIGHT);
+			guiGraphics.blit(this.program.getIcon(), getX(), getY(), SIZE, SIZE, 0, 0, SIZE, SIZE, SIZE, SIZE);
 		}
 	}
 	
