@@ -135,7 +135,7 @@ public final class MSBlocks
 	
 	public static final DeferredBlock<Block> SMOOTH_CRUXITE_BLOCK = REGISTER.register("smooth_cruxite_block", () -> new Block(Block.Properties.of().mapColor(DyeColor.LIGHT_BLUE).instrument(NoteBlockInstrument.CHIME).strength(3.0F).requiresCorrectToolForDrops()));
 	public static final DeferredBlock<Block> CHISELED_CRUXITE_BLOCK = REGISTER.register("chiseled_cruxite_block", () -> new Block(Block.Properties.of().mapColor(DyeColor.LIGHT_BLUE).instrument(NoteBlockInstrument.CHIME).strength(3.0F).requiresCorrectToolForDrops()));
-	public static final DeferredBlock<Block> CRUXITE_PILLAR = REGISTER.register("cruxite_pillar", () -> new MSDirectionalBlock(Block.Properties.of().mapColor(DyeColor.LIGHT_BLUE).instrument(NoteBlockInstrument.CHIME).strength(3.0F).requiresCorrectToolForDrops()));
+	public static final DeferredBlock<Block> CRUXITE_PILLAR = REGISTER.register("cruxite_pillar", () -> new RotatedPillarBlock(Block.Properties.of().mapColor(DyeColor.LIGHT_BLUE).instrument(NoteBlockInstrument.CHIME).strength(3.0F).requiresCorrectToolForDrops()));
 	public static final DeferredBlock<Block> CRUXITE_LAMP = REGISTER.register("cruxite_lamp", () -> new CustomLampBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.LIGHT_BLUE).sound(SoundType.AMETHYST)
 			.strength(1f).lightLevel(state -> state.getValue(CustomLampBlock.CLICKED) ? 15 : 0)));
 	
@@ -183,7 +183,7 @@ public final class MSBlocks
 	public static final DeferredBlock<SlabBlock> COARSE_STONE_BRICK_SLAB = REGISTER.register("coarse_stone_brick_slab", () -> new SlabBlock(ofFullCopy(COARSE_STONE_BRICKS.get())));
 	public static final DeferredBlock<WallBlock> COARSE_STONE_BRICK_WALL = REGISTER.register("coarse_stone_brick_wall", () -> new WallBlock(ofFullCopy(COARSE_STONE_BRICKS.get())));
 	
-	public static final DeferredBlock<Block> COARSE_STONE_COLUMN = REGISTER.register("coarse_stone_column", () -> new MSDirectionalBlock(ofFullCopy(COARSE_STONE.get())));
+	public static final DeferredBlock<Block> COARSE_STONE_COLUMN = REGISTER.register("coarse_stone_column", () -> new RotatedPillarBlock(ofFullCopy(COARSE_STONE.get())));
 	public static final DeferredBlock<Block> CHISELED_COARSE_STONE_BRICKS = REGISTER.register("chiseled_coarse_stone_bricks", () -> new Block(ofFullCopy(COARSE_STONE.get())));
 	public static final DeferredBlock<Block> CRACKED_COARSE_STONE_BRICKS = REGISTER.register("cracked_coarse_stone_bricks", () -> new Block(ofFullCopy(COARSE_STONE.get())));
 	public static final DeferredBlock<Block> MOSSY_COARSE_STONE_BRICKS = REGISTER.register("mossy_coarse_stone_bricks", () -> new Block(ofFullCopy(COARSE_STONE.get())));
@@ -207,7 +207,7 @@ public final class MSBlocks
 	public static final DeferredBlock<SlabBlock> SMOOTH_SHADE_STONE_SLAB = REGISTER.register("smooth_shade_stone_slab", () -> new SlabBlock(ofFullCopy(SMOOTH_SHADE_STONE.get())));
 	public static final DeferredBlock<WallBlock> SMOOTH_SHADE_STONE_WALL = REGISTER.register("smooth_shade_stone_wall", () -> new WallBlock(ofFullCopy(SMOOTH_SHADE_STONE.get())));
 	
-	public static final DeferredBlock<Block> SHADE_COLUMN = REGISTER.register("shade_column", () -> new MSDirectionalBlock(ofFullCopy(SHADE_STONE.get())));
+	public static final DeferredBlock<Block> SHADE_COLUMN = REGISTER.register("shade_column", () -> new RotatedPillarBlock(ofFullCopy(SHADE_STONE.get())));
 	public static final DeferredBlock<Block> CHISELED_SHADE_BRICKS = REGISTER.register("chiseled_shade_bricks", () -> new Block(ofFullCopy(SHADE_BRICKS.get())));
 	public static final DeferredBlock<Block> CRACKED_SHADE_BRICKS = REGISTER.register("cracked_shade_bricks", () -> new Block(ofFullCopy(SHADE_BRICKS.get())));
 	
@@ -238,7 +238,7 @@ public final class MSBlocks
 	public static final DeferredBlock<WallBlock> FROST_BRICK_WALL = REGISTER.register("frost_brick_wall", () -> new WallBlock(ofFullCopy(FROST_BRICKS.get())));
 	
 	public static final DeferredBlock<Block> CHISELED_FROST_TILE = REGISTER.register("chiseled_frost_tile", () -> new Block(ofFullCopy(FROST_TILE.get())));
-	public static final DeferredBlock<Block> FROST_COLUMN = REGISTER.register("frost_column", () -> new MSDirectionalBlock(ofFullCopy(FROST_TILE.get())));
+	public static final DeferredBlock<Block> FROST_COLUMN = REGISTER.register("frost_column", () -> new RotatedPillarBlock(ofFullCopy(FROST_TILE.get())));
 	public static final DeferredBlock<Block> CHISELED_FROST_BRICKS = REGISTER.register("chiseled_frost_bricks", () -> new Block(ofFullCopy(FROST_BRICKS.get()))); //while it is a pillar block, it cannot be rotated, making it similar to cut sandstone
 	public static final DeferredBlock<Block> CRACKED_FROST_BRICKS = REGISTER.register("cracked_frost_bricks", () -> new Block(ofFullCopy(FROST_BRICKS.get())));
 	
@@ -265,9 +265,9 @@ public final class MSBlocks
 	public static final DeferredBlock<SlabBlock> CAST_IRON_SHEET_SLAB = REGISTER.register("cast_iron_sheet_slab", () -> new SlabBlock(ofFullCopy(CAST_IRON_SHEET.get())));
 	
 	public static final DeferredBlock<Block> CHISELED_CAST_IRON = REGISTER.register("chiseled_cast_iron", () -> new Block(ofFullCopy(CAST_IRON.get())));
-	public static final DeferredBlock<Block> CAST_IRON_FRAME = REGISTER.register("cast_iron_frame", () -> new MSDirectionalBlock(Block.Properties.of().noOcclusion().mapColor(MapColor.METAL).requiresCorrectToolForDrops().strength(3.0F, 9.0F)));
+	public static final DeferredBlock<Block> CAST_IRON_FRAME = REGISTER.register("cast_iron_frame", () -> new RotatedPillarBlock(Block.Properties.of().noOcclusion().mapColor(MapColor.METAL).requiresCorrectToolForDrops().strength(3.0F, 9.0F)));
 	
-	public static final DeferredBlock<Block> STEEL_BEAM = REGISTER.register("steel_beam", () -> new MSDirectionalBlock(Block.Properties.of().mapColor(MapColor.METAL).requiresCorrectToolForDrops().strength(3.0F, 9.0F)));
+	public static final DeferredBlock<Block> STEEL_BEAM = REGISTER.register("steel_beam", () -> new RotatedPillarBlock(Block.Properties.of().mapColor(MapColor.METAL).requiresCorrectToolForDrops().strength(3.0F, 9.0F)));
 	
 	//Sulfur
 	public static final DeferredBlock<Block> NATIVE_SULFUR = REGISTER.register("native_sulfur", () -> new Block(Block.Properties.of().mapColor(MapColor.COLOR_YELLOW).strength(0.5F, 1.0F)));
@@ -295,7 +295,7 @@ public final class MSBlocks
 	public static final DeferredBlock<SlabBlock> MYCELIUM_BRICK_SLAB = REGISTER.register("mycelium_brick_slab", () -> new SlabBlock(ofFullCopy(MYCELIUM_BRICKS.get())));
 	public static final DeferredBlock<WallBlock> MYCELIUM_BRICK_WALL = REGISTER.register("mycelium_brick_wall", () -> new WallBlock(ofFullCopy(MYCELIUM_BRICKS.get())));
 	
-	public static final DeferredBlock<Block> MYCELIUM_COLUMN = REGISTER.register("mycelium_column", () -> new MSDirectionalBlock(ofFullCopy(MYCELIUM_STONE.get())));
+	public static final DeferredBlock<Block> MYCELIUM_COLUMN = REGISTER.register("mycelium_column", () -> new RotatedPillarBlock(ofFullCopy(MYCELIUM_STONE.get())));
 	public static final DeferredBlock<Block> CHISELED_MYCELIUM_BRICKS = REGISTER.register("chiseled_mycelium_bricks", () -> new Block(ofFullCopy(MYCELIUM_BRICKS.get())));
 	public static final DeferredBlock<Block> SUSPICIOUS_CHISELED_MYCELIUM_BRICKS = REGISTER.register("suspicious_chiseled_mycelium_bricks", () -> new Block(ofFullCopy(MYCELIUM_BRICKS.get())));
 	public static final DeferredBlock<Block> CRACKED_MYCELIUM_BRICKS = REGISTER.register("cracked_mycelium_bricks", () -> new Block(ofFullCopy(MYCELIUM_BRICKS.get())));
@@ -335,7 +335,7 @@ public final class MSBlocks
 	public static final DeferredBlock<SlabBlock> BLACK_STONE_BRICK_SLAB = REGISTER.register("black_stone_brick_slab", () -> new SlabBlock(ofFullCopy(BLACK_STONE_BRICKS.get())));
 	public static final DeferredBlock<WallBlock> BLACK_STONE_BRICK_WALL = REGISTER.register("black_stone_brick_wall", () -> new WallBlock(ofFullCopy(BLACK_STONE_BRICKS.get())));
 	
-	public static final DeferredBlock<Block> BLACK_STONE_COLUMN = REGISTER.register("black_stone_column", () -> new MSDirectionalBlock(ofFullCopy(BLACK_STONE.get())));
+	public static final DeferredBlock<Block> BLACK_STONE_COLUMN = REGISTER.register("black_stone_column", () -> new RotatedPillarBlock(ofFullCopy(BLACK_STONE.get())));
 	public static final DeferredBlock<Block> CHISELED_BLACK_STONE_BRICKS = REGISTER.register("chiseled_black_stone_bricks", () -> new Block(ofFullCopy(BLACK_STONE_BRICKS.get())));
 	public static final DeferredBlock<Block> CRACKED_BLACK_STONE_BRICKS = REGISTER.register("cracked_black_stone_bricks", () -> new Block(ofFullCopy(BLACK_STONE_BRICKS.get())));
 	
@@ -362,7 +362,7 @@ public final class MSBlocks
 	public static final DeferredBlock<SlabBlock> POLISHED_IGNEOUS_BRICK_SLAB = REGISTER.register("polished_igneous_brick_slab", () -> new SlabBlock(ofFullCopy(POLISHED_IGNEOUS_BRICKS.get())));
 	public static final DeferredBlock<WallBlock> POLISHED_IGNEOUS_BRICK_WALL = REGISTER.register("polished_igneous_brick_wall", () -> new WallBlock(ofFullCopy(POLISHED_IGNEOUS_BRICKS.get())));
 	
-	public static final DeferredBlock<Block> POLISHED_IGNEOUS_PILLAR = REGISTER.register("polished_igneous_pillar", () -> new MSDirectionalBlock(ofFullCopy(POLISHED_IGNEOUS_BRICKS.get())));
+	public static final DeferredBlock<Block> POLISHED_IGNEOUS_PILLAR = REGISTER.register("polished_igneous_pillar", () -> new RotatedPillarBlock(ofFullCopy(POLISHED_IGNEOUS_BRICKS.get())));
 	public static final DeferredBlock<Block> CHISELED_IGNEOUS_STONE = REGISTER.register("chiseled_igneous_stone", () -> new Block(ofFullCopy(POLISHED_IGNEOUS_BRICKS.get())));
 	public static final DeferredBlock<Block> CRACKED_POLISHED_IGNEOUS_BRICKS = REGISTER.register("cracked_polished_igneous_bricks", () -> new Block(ofFullCopy(POLISHED_IGNEOUS_BRICKS.get())));
 	
@@ -436,7 +436,7 @@ public final class MSBlocks
 	public static final DeferredBlock<SlabBlock> CHALK_BRICK_SLAB = REGISTER.register("chalk_brick_slab", () -> new SlabBlock(ofFullCopy(CHALK_BRICKS.get())));
 	public static final DeferredBlock<WallBlock> CHALK_BRICK_WALL = REGISTER.register("chalk_brick_wall", () -> new WallBlock(ofFullCopy(CHALK_BRICKS.get())));
 	
-	public static final DeferredBlock<Block> CHALK_COLUMN = REGISTER.register("chalk_column", () -> new MSDirectionalBlock(ofFullCopy(CHALK.get())));
+	public static final DeferredBlock<Block> CHALK_COLUMN = REGISTER.register("chalk_column", () -> new RotatedPillarBlock(ofFullCopy(CHALK.get())));
 	public static final DeferredBlock<Block> CHISELED_CHALK_BRICKS = REGISTER.register("chiseled_chalk_bricks", () -> new Block(ofFullCopy(CHALK_BRICKS.get())));
 	
 	public static final DeferredBlock<Block> MOSSY_CHALK_BRICKS = REGISTER.register("mossy_chalk_bricks", () -> new Block(ofFullCopy(CHALK_BRICKS.get())));
@@ -467,7 +467,7 @@ public final class MSBlocks
 	public static final DeferredBlock<SlabBlock> PINK_STONE_BRICK_SLAB = REGISTER.register("pink_stone_brick_slab", () -> new SlabBlock(ofFullCopy(PINK_STONE_BRICKS.get())));
 	public static final DeferredBlock<WallBlock> PINK_STONE_BRICK_WALL = REGISTER.register("pink_stone_brick_wall", () -> new WallBlock(ofFullCopy(PINK_STONE_BRICKS.get())));
 	
-	public static final DeferredBlock<Block> PINK_STONE_COLUMN = REGISTER.register("pink_stone_column", () -> new MSDirectionalBlock(ofFullCopy(PINK_STONE.get())));
+	public static final DeferredBlock<Block> PINK_STONE_COLUMN = REGISTER.register("pink_stone_column", () -> new RotatedPillarBlock(ofFullCopy(PINK_STONE.get())));
 	public static final DeferredBlock<Block> CHISELED_PINK_STONE_BRICKS = REGISTER.register("chiseled_pink_stone_bricks", () -> new Block(ofFullCopy(PINK_STONE_BRICKS.get())));
 	public static final DeferredBlock<Block> CRACKED_PINK_STONE_BRICKS = REGISTER.register("cracked_pink_stone_bricks", () -> new Block(ofFullCopy(PINK_STONE_BRICKS.get())));
 	
@@ -495,7 +495,7 @@ public final class MSBlocks
 	public static final DeferredBlock<WallBlock> BROWN_STONE_BRICK_WALL = REGISTER.register("brown_stone_brick_wall", () -> new WallBlock(ofFullCopy(BROWN_STONE_BRICKS.get())));
 	
 	public static final DeferredBlock<Block> CRACKED_BROWN_STONE_BRICKS = REGISTER.register("cracked_brown_stone_bricks", () -> new Block(ofFullCopy(BROWN_STONE.get())));
-	public static final DeferredBlock<Block> BROWN_STONE_COLUMN = REGISTER.register("brown_stone_column", () -> new MSDirectionalBlock(ofFullCopy(BROWN_STONE.get())));
+	public static final DeferredBlock<Block> BROWN_STONE_COLUMN = REGISTER.register("brown_stone_column", () -> new RotatedPillarBlock(ofFullCopy(BROWN_STONE.get())));
 	
 	//Green
 	public static final DeferredBlock<Block> GREEN_STONE = REGISTER.register("green_stone", () -> new Block(Block.Properties.of().mapColor(MapColor.COLOR_GREEN).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(2.5F, 7.0F)));
@@ -515,7 +515,7 @@ public final class MSBlocks
 	public static final DeferredBlock<SlabBlock> GREEN_STONE_BRICK_SLAB = REGISTER.register("green_stone_brick_slab", () -> new SlabBlock(ofFullCopy(GREEN_STONE_BRICKS.get())));
 	public static final DeferredBlock<WallBlock> GREEN_STONE_BRICK_WALL = REGISTER.register("green_stone_brick_wall", () -> new WallBlock(ofFullCopy(GREEN_STONE_BRICKS.get())));
 	
-	public static final DeferredBlock<Block> GREEN_STONE_COLUMN = REGISTER.register("green_stone_column", () -> new MSDirectionalBlock(ofFullCopy(GREEN_STONE.get())));
+	public static final DeferredBlock<Block> GREEN_STONE_COLUMN = REGISTER.register("green_stone_column", () -> new RotatedPillarBlock(ofFullCopy(GREEN_STONE.get())));
 	public static final DeferredBlock<Block> CHISELED_GREEN_STONE_BRICKS = REGISTER.register("chiseled_green_stone_bricks", () -> new Block(ofFullCopy(GREEN_STONE_BRICKS.get())));
 	
 	public static final DeferredBlock<Block> HORIZONTAL_GREEN_STONE_BRICKS = REGISTER.register("horizontal_green_stone_bricks", () -> new Block(ofFullCopy(GREEN_STONE_BRICKS.get())));
@@ -545,10 +545,10 @@ public final class MSBlocks
 	public static final DeferredBlock<Block> STEEP_GREEN_STONE_BRICK_STAIRS_TOP = REGISTER.register("steep_green_stone_brick_stairs_top", () -> new CustomShapeBlock(ofFullCopy(GREEN_STONE.get()), MSBlockShapes.STEEP_STAIRS_TOP));
 	
 	//Sandstone
-	public static final DeferredBlock<Block> SANDSTONE_COLUMN = REGISTER.register("sandstone_column", () -> new MSDirectionalBlock(Block.Properties.of().mapColor(MapColor.SAND).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(0.8F)));
-	public static final DeferredBlock<Block> CHISELED_SANDSTONE_COLUMN = REGISTER.register("chiseled_sandstone_column", () -> new MSDirectionalBlock(Block.Properties.of().mapColor(MapColor.SAND).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(0.8F)));
-	public static final DeferredBlock<Block> RED_SANDSTONE_COLUMN = REGISTER.register("red_sandstone_column", () -> new MSDirectionalBlock(Block.Properties.of().mapColor(MapColor.COLOR_ORANGE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(0.8F)));
-	public static final DeferredBlock<Block> CHISELED_RED_SANDSTONE_COLUMN = REGISTER.register("chiseled_red_sandstone_column", () -> new MSDirectionalBlock(Block.Properties.of().mapColor(MapColor.COLOR_ORANGE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(0.8F)));
+	public static final DeferredBlock<Block> SANDSTONE_COLUMN = REGISTER.register("sandstone_column", () -> new RotatedPillarBlock(Block.Properties.of().mapColor(MapColor.SAND).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(0.8F)));
+	public static final DeferredBlock<Block> CHISELED_SANDSTONE_COLUMN = REGISTER.register("chiseled_sandstone_column", () -> new RotatedPillarBlock(Block.Properties.of().mapColor(MapColor.SAND).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(0.8F)));
+	public static final DeferredBlock<Block> RED_SANDSTONE_COLUMN = REGISTER.register("red_sandstone_column", () -> new RotatedPillarBlock(Block.Properties.of().mapColor(MapColor.COLOR_ORANGE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(0.8F)));
+	public static final DeferredBlock<Block> CHISELED_RED_SANDSTONE_COLUMN = REGISTER.register("chiseled_red_sandstone_column", () -> new RotatedPillarBlock(Block.Properties.of().mapColor(MapColor.COLOR_ORANGE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(0.8F)));
 	
 	//Wood
 	public static final DeferredBlock<Block> CARVED_LOG = REGISTER.register("carved_log", () -> new RotatedPillarBlock(Block.Properties.of().mapColor(MapColor.WOOD).instrument(NoteBlockInstrument.BASS).strength(2.0F).requiresCorrectToolForDrops().sound(SoundType.WOOD)));
@@ -932,8 +932,8 @@ public final class MSBlocks
 	//Special Land Blocks
 	public static final DeferredBlock<Block> GLOWY_GOOP = REGISTER.register("glowy_goop", () -> new SlimeBlock(Block.Properties.of().mapColor(MapColor.CLAY).strength(0.1F).sound(SoundType.SLIME_BLOCK).lightLevel(state -> 14)));
 	public static final DeferredBlock<Block> COAGULATED_BLOOD = REGISTER.register("coagulated_blood", () -> new SlimeBlock(Block.Properties.of().mapColor(MapColor.CLAY).strength(0.1F).sound(SoundType.SLIME_BLOCK)));
-	public static final DeferredBlock<Block> PIPE = REGISTER.register("pipe", () -> new DirectionalCustomShapeBlock(Block.Properties.of().mapColor(MapColor.METAL).requiresCorrectToolForDrops().strength(4.0F).sound(SoundType.METAL), MSBlockShapes.PIPE));
-	public static final DeferredBlock<Block> PIPE_INTERSECTION = REGISTER.register("pipe_intersection", () -> new Block(Block.Properties.of().mapColor(MapColor.METAL).requiresCorrectToolForDrops().strength(4.0F).sound(SoundType.METAL))); //the intention is that later down the line, someone will improve the code of pipe blocks to allow for intersections or a separate intersection blockset will be made that actually work
+	public static final DeferredBlock<Block> PIPE = REGISTER.register("pipe", () -> new PipeBlock(Block.Properties.of().mapColor(MapColor.METAL).requiresCorrectToolForDrops().strength(4.0F).sound(SoundType.METAL)));
+	public static final DeferredBlock<Block> PIPE_INTERSECTION = REGISTER.register("pipe_intersection", () -> new Block(Block.Properties.of().mapColor(MapColor.METAL).requiresCorrectToolForDrops().strength(4.0F).sound(SoundType.METAL))); // fixme: make this into a PipeBlock once they get overhauled
 	public static final DeferredBlock<Block> PARCEL_PYXIS = REGISTER.register("parcel_pyxis", () -> new CustomShapeBlock(Block.Properties.of().mapColor(MapColor.METAL).requiresCorrectToolForDrops().strength(4.0F), MSBlockShapes.PARCEL_PYXIS));
 	public static final DeferredBlock<Block> PYXIS_LID = REGISTER.register("pyxis_lid", () -> new CustomShapeBlock(Block.Properties.of().mapColor(MapColor.METAL).requiresCorrectToolForDrops().strength(1.0F), MSBlockShapes.PYXIS_LID));
 	public static final DeferredBlock<Block> STONE_TABLET = REGISTER.register("stone_tablet", () -> new StoneTabletBlock(Block.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(0.3F)));

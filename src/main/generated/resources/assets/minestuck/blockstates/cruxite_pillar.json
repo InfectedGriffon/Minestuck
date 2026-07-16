@@ -1,29 +1,16 @@
 {
   "variants": {
-    "facing=down": {
-      "model": "minestuck:block/cruxite_pillar"
-    },
-    "facing=east": {
+    "axis=x": {
       "model": "minestuck:block/cruxite_pillar",
       "x": 90,
       "y": 90
     },
-    "facing=north": {
-      "model": "minestuck:block/cruxite_pillar",
-      "x": 90
-    },
-    "facing=south": {
-      "model": "minestuck:block/cruxite_pillar",
-      "x": 90,
-      "y": 180
-    },
-    "facing=up": {
+    "axis=y": {
       "model": "minestuck:block/cruxite_pillar"
     },
-    "facing=west": {
+    "axis=z": {
       "model": "minestuck:block/cruxite_pillar",
-      "x": 90,
-      "y": 270
+      "x": 90
     }
   }
 }

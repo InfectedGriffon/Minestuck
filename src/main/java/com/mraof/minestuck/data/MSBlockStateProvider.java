@@ -143,7 +143,7 @@ public class MSBlockStateProvider extends BlockStateProvider
 		wallWithItem(MSBlocks.CRUXITE_BRICK_WALL, MSBlocks.CRUXITE_BRICKS);
 		simpleBlockWithItem(MSBlocks.SMOOTH_CRUXITE_BLOCK);
 		simpleBlockWithItem(MSBlocks.CHISELED_CRUXITE_BLOCK);
-		unflippedColumnWithItem(MSBlocks.CRUXITE_PILLAR,
+		axisWithItem(MSBlocks.CRUXITE_PILLAR,
 				id -> models().cubeColumn(
 						id.getPath(),
 						texture(id),
@@ -182,7 +182,7 @@ public class MSBlockStateProvider extends BlockStateProvider
 		simpleBlockWithItem(MSBlocks.COARSE_STONE_BRICKS);
 		wallWithItem(MSBlocks.COARSE_STONE_BRICK_WALL, MSBlocks.COARSE_STONE_BRICKS);
 		
-		unflippedColumnWithItem(MSBlocks.COARSE_STONE_COLUMN,
+		axisWithItem(MSBlocks.COARSE_STONE_COLUMN,
 				id -> models().cubeColumn(
 						id.getPath(),
 						texture(id),
@@ -204,7 +204,7 @@ public class MSBlockStateProvider extends BlockStateProvider
 		simpleBlockWithItem(MSBlocks.SHADE_BRICKS);
 		wallWithItem(MSBlocks.SHADE_BRICK_WALL, MSBlocks.SHADE_BRICKS);
 		
-		unflippedColumnWithItem(MSBlocks.SHADE_COLUMN,
+		axisWithItem(MSBlocks.SHADE_COLUMN,
 				id -> models().cubeColumn(
 						id.getPath(),
 						texture("shade_stone_column"),
@@ -235,7 +235,7 @@ public class MSBlockStateProvider extends BlockStateProvider
 		simpleBlockWithItem(MSBlocks.FROST_BRICKS);
 		wallWithItem(MSBlocks.FROST_BRICK_WALL, MSBlocks.FROST_BRICKS);
 		
-		unflippedColumnWithItem(MSBlocks.FROST_COLUMN,
+		axisWithItem(MSBlocks.FROST_COLUMN,
 				id -> models().cubeColumn(
 						id.getPath(),
 						texture(id),
@@ -268,14 +268,14 @@ public class MSBlockStateProvider extends BlockStateProvider
 		slabWithItem(MSBlocks.CAST_IRON_SHEET_SLAB, MSBlocks.CAST_IRON_SHEET);
 		
 		simpleBlockWithItem(MSBlocks.CHISELED_CAST_IRON);
-		unflippedColumnWithItem(MSBlocks.CAST_IRON_FRAME,
+		axisWithItem(MSBlocks.CAST_IRON_FRAME,
 				id -> models().cubeColumn(
 						id.getPath(),
 						texture(id),
 						texture(id.withSuffix("_top")))
 						.renderType("cutout"));
 		
-		unflippedColumnWithItem(MSBlocks.STEEL_BEAM,
+		axisWithItem(MSBlocks.STEEL_BEAM,
 				id -> models().cubeColumn(
 						id.getPath(),
 						texture(id.withSuffix("_side")),
@@ -301,7 +301,7 @@ public class MSBlockStateProvider extends BlockStateProvider
 		simpleBlockWithItem(MSBlocks.MYCELIUM_BRICKS);
 		wallWithItem(MSBlocks.MYCELIUM_BRICK_WALL, MSBlocks.MYCELIUM_BRICKS);
 		
-		unflippedColumnWithItem(MSBlocks.MYCELIUM_COLUMN,
+		axisWithItem(MSBlocks.MYCELIUM_COLUMN,
 				id -> models().cubeColumn(
 						id.getPath(),
 						texture(id),
@@ -344,7 +344,7 @@ public class MSBlockStateProvider extends BlockStateProvider
 		slabWithItem(MSBlocks.BLACK_STONE_BRICK_SLAB, MSBlocks.BLACK_STONE_BRICKS);
 		wallWithItem(MSBlocks.BLACK_STONE_BRICK_WALL, MSBlocks.BLACK_STONE_BRICKS);
 		
-		unflippedColumnWithItem(MSBlocks.BLACK_STONE_COLUMN,
+		axisWithItem(MSBlocks.BLACK_STONE_COLUMN,
 				id -> models().cubeColumn(
 						id.getPath(),
 						texture(id),
@@ -374,7 +374,7 @@ public class MSBlockStateProvider extends BlockStateProvider
 		slabWithItem(MSBlocks.POLISHED_IGNEOUS_BRICK_SLAB, MSBlocks.POLISHED_IGNEOUS_BRICKS);
 		wallWithItem(MSBlocks.POLISHED_IGNEOUS_BRICK_WALL, MSBlocks.POLISHED_IGNEOUS_BRICKS);
 		
-		unflippedColumnWithItem(MSBlocks.POLISHED_IGNEOUS_PILLAR,
+		axisWithItem(MSBlocks.POLISHED_IGNEOUS_PILLAR,
 				id -> models().cubeColumn(
 						id.getPath(),
 						texture(id),
@@ -457,7 +457,7 @@ public class MSBlockStateProvider extends BlockStateProvider
 		simpleBlockWithItem(MSBlocks.CHALK_BRICKS);
 		wallWithItem(MSBlocks.CHALK_BRICK_WALL, MSBlocks.CHALK_BRICKS);
 		
-		unflippedColumnWithItem(MSBlocks.CHALK_COLUMN,
+		axisWithItem(MSBlocks.CHALK_COLUMN,
 				id -> models().cubeColumn(
 						id.getPath(),
 						texture(id),
@@ -487,7 +487,7 @@ public class MSBlockStateProvider extends BlockStateProvider
 		simpleBlockWithItem(MSBlocks.PINK_STONE_BRICKS);
 		wallWithItem(MSBlocks.PINK_STONE_BRICK_WALL, MSBlocks.PINK_STONE_BRICKS);
 		
-		unflippedColumnWithItem(MSBlocks.PINK_STONE_COLUMN,
+		axisWithItem(MSBlocks.PINK_STONE_COLUMN,
 				id -> models().cubeColumn(
 						id.getPath(),
 						texture(id),
@@ -514,7 +514,7 @@ public class MSBlockStateProvider extends BlockStateProvider
 		wallWithItem(MSBlocks.BROWN_STONE_BRICK_WALL, MSBlocks.BROWN_STONE_BRICKS);
 		
 		simpleBlockWithItem(MSBlocks.CRACKED_BROWN_STONE_BRICKS);
-		unflippedColumnWithItem(MSBlocks.BROWN_STONE_COLUMN,
+		axisWithItem(MSBlocks.BROWN_STONE_COLUMN,
 				id -> models().cubeColumn(
 						id.getPath(),
 						texture(id),
@@ -533,7 +533,7 @@ public class MSBlockStateProvider extends BlockStateProvider
 		simpleBlockWithItem(MSBlocks.GREEN_STONE_BRICKS);
 		wallWithItem(MSBlocks.GREEN_STONE_BRICK_WALL, MSBlocks.GREEN_STONE_BRICKS);
 		
-		unflippedColumnWithItem(MSBlocks.GREEN_STONE_COLUMN,
+		axisWithItem(MSBlocks.GREEN_STONE_COLUMN,
 				id -> models().cubeColumn(
 						id.getPath(),
 						texture(id),
@@ -572,22 +572,22 @@ public class MSBlockStateProvider extends BlockStateProvider
 		simpleBlockWithItem(MSBlocks.GREEN_STONE_BRICK_SKAIA);
 		simpleBlockWithItem(MSBlocks.GREEN_STONE_BRICK_TURTLE);
 		
-		unflippedColumnWithItem(MSBlocks.SANDSTONE_COLUMN,
+		axisWithItem(MSBlocks.SANDSTONE_COLUMN,
 				id -> models().cubeColumn(
 						id.getPath(),
 						texture(id),
 						texture(id.withSuffix("_end"))));
-		directionalUpWithItem(MSBlocks.CHISELED_SANDSTONE_COLUMN,
+		axisWithItem(MSBlocks.CHISELED_SANDSTONE_COLUMN,
 				id -> models().cubeColumn(
 						id.getPath(),
 						texture(id),
 						texture("sandstone_column_end")));
-		unflippedColumnWithItem(MSBlocks.RED_SANDSTONE_COLUMN,
+		axisWithItem(MSBlocks.RED_SANDSTONE_COLUMN,
 				id -> models().cubeColumn(
 						id.getPath(),
 						texture(id),
 						texture(id.withSuffix("_end"))));
-		directionalUpWithItem(MSBlocks.CHISELED_RED_SANDSTONE_COLUMN,
+		axisWithItem(MSBlocks.CHISELED_RED_SANDSTONE_COLUMN,
 				id -> models().cubeColumn(
 						id.getPath(),
 						texture(id),
@@ -1153,7 +1153,7 @@ public class MSBlockStateProvider extends BlockStateProvider
 		//Special Land Blocks
 		simpleBlockWithItem(MSBlocks.GLOWY_GOOP);
 		simpleBlockWithItem(MSBlocks.COAGULATED_BLOOD);
-		unflippedColumnWithItem(MSBlocks.PIPE, this::existing);
+		axisWithItem(MSBlocks.PIPE, this::existing);
 		simpleBlockWithItem(MSBlocks.PIPE_INTERSECTION);
 		simpleHorizontalWithItem(MSBlocks.PARCEL_PYXIS, this::existing);
 		simpleHorizontalWithItem(MSBlocks.PYXIS_LID,
